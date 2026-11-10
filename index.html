@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NORTHSTAR HVAC | Premium Heating &amp; Cooling Services</title>
+<meta name="description" content="Premium heating and cooling services: AC installation, AC repair, heating and HVAC maintenance.">
+<meta name="theme-color" content="#07111F">
+<script>document.documentElement.classList.add("js");</script>
+<style>
+/* =====================================================
+   1. COLORS & SETTINGS — change the colors here
+   ===================================================== */
+:root{
+  --bg:#07111F;          /* main background */
+  --bg2:#0B1B2D;         /* secondary background */
+  --line:rgba(255,255,255,.1);
+  --blue:#287BFF;        /* accent blue */
+  --blue2:#55A0FF;       /* bright accent */
+  --btn:#2cff05;         /* BUTTON COLOR (Call Now, Get a Free Estimate) */
+  --btn-text:#04110a;    /* text color inside the buttons */
+  --text:#F5F8FC;        /* main text */
+  --muted:#A9B7C9;       /* secondary text */
+  --radius:20px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px;overflow-x:hidden}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-text-size-adjust:100%}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{width:min(1200px,100% - 40px);margin-inline:auto}
+section{padding:clamp(72px,10vw,130px) 0;position:relative}
+.eyebrow{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue2);margin-bottom:18px}
+h1,h2,h3{line-height:1.08;letter-spacing:-.025em;font-weight:800}
+h2{font-size:clamp(1.9rem,4.6vw,3.2rem);margin-bottom:18px}
+.lead{color:var(--muted);font-size:clamp(1rem,1.5vw,1.15rem);max-width:600px}
+
+/* Buttons */
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 30px;border-radius:999px;font-weight:700;font-size:.95rem;letter-spacing:.04em;border:1.5px solid transparent;cursor:pointer;font-family:inherit;transition:transform .3s var(--ease),box-shadow .3s,background .3s,border-color .3s}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{background:var(--btn);color:var(--btn-text);box-shadow:0 10px 30px rgba(44,255,5,.3)}
+.btn-primary::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.28) 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s var(--ease)}
+.btn-primary:hover::after{transform:translateX(120%)}
+.btn-primary:hover{box-shadow:0 14px 40px rgba(44,255,5,.5)}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff;background:rgba(255,255,255,.04);backdrop-filter:blur(6px)}
+.btn-ghost:hover{border-color:var(--blue2);background:rgba(85,160,255,.12)}
+
+/* Scroll reveal (only active when JavaScript runs) */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal.in{opacity:1;transform:none}
+/* The reveal is applied to the <img> inside the frame (the frame itself must stay visible so the browser can detect it) */
+.js .img-reveal img{clip-path:inset(0 0 100% 0);transition:clip-path 1.2s var(--ease),transform 1.2s var(--ease);transition-delay:var(--d,0s),0s}
+.js .img-reveal.in img{clip-path:inset(0 0 0 0)}
+
+/* Photo frames: subtle zoom on hover */
+.photo{position:relative;overflow:hidden;background:var(--bg2)}
+.photo img{transition:transform 1.2s var(--ease)}
+.photo:hover img{transform:scale(1.05)}
+
+/* =====================================================
+   2. HEADER
+   ===================================================== */
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding-top:env(safe-area-inset-top,0px);transition:background .4s,border-color .4s,backdrop-filter .4s;border-bottom:1px solid transparent}
+header.scrolled,header.menu-open{background:rgba(7,17,31,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.logo{font-weight:800;font-size:1.2rem;letter-spacing:.08em;white-space:nowrap}
+.logo b{color:var(--blue2);font-weight:800}
+.nav-links{display:flex;gap:38px}
+.nav-links a{position:relative;font-weight:600;font-size:.95rem;color:var(--muted);padding:6px 0;transition:color .3s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--blue2);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.nav-links a:hover{color:#fff}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-call{min-height:44px;padding:0 24px;font-size:.85rem}
+.burger{display:none;width:48px;height:48px;background:none;border:0;cursor:pointer;color:#fff;margin-right:-10px}
+.burger span{display:block;width:24px;height:2px;background:currentColor;margin:6px auto;transition:transform .35s var(--ease),opacity .25s}
+.burger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* =====================================================
+   3. HERO — photo on the right, headline on the dark left
+   ===================================================== */
+.hero{padding:0;min-height:min(100svh,900px);display:flex;align-items:center;overflow:hidden}
+.hero-photo{position:absolute;inset:0}
+.hero-photo img{object-position:72% center;animation:heroZoom 2.4s var(--ease) both}
+.hero-photo::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--bg) 0%,rgba(7,17,31,.88) 30%,rgba(7,17,31,.35) 58%,rgba(7,17,31,.1) 100%)}
+.hero-photo::after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(60% 70% at 0% 100%,rgba(40,123,255,.28),transparent 70%),linear-gradient(180deg,rgba(7,17,31,.55) 0%,transparent 22%,transparent 75%,var(--bg) 100%)}
+.hero-content{position:relative;z-index:2;padding:130px 0 90px;max-width:600px}
+.hero h1{font-size:clamp(2.5rem,6vw,5rem);margin-bottom:24px}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.08em}
+.hero h1 .line span{display:block;animation:rise 1s var(--ease) both}
+.hero h1 .line:nth-child(2) span{animation-delay:.12s}
+.hero h1 .line:nth-child(3) span{animation-delay:.24s}
+.hero h1 em{font-style:normal;color:var(--blue2)}
+.hero p{color:var(--muted);font-size:clamp(1rem,1.6vw,1.2rem);max-width:500px;margin-bottom:36px}
+.hero .eyebrow,.hero p{animation:fade 1s var(--ease) both}
+.hero p{animation-delay:.4s}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px}
+.hero-btns .btn{animation:fade .9s var(--ease) both}
+.hero-btns .btn:nth-child(1){animation-delay:.55s}
+.hero-btns .btn:nth-child(2){animation-delay:.7s}
+@keyframes rise{from{transform:translateY(110%)}to{transform:none}}
+@keyframes fade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes heroZoom{from{transform:scale(1.08);opacity:.6}to{transform:none;opacity:1}}
+
+/* =====================================================
+   4. ABOUT
+   ===================================================== */
+.about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(36px,7vw,100px);align-items:center}
+.about-photo{border-radius:var(--radius);aspect-ratio:4/5;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.about-photo img{object-position:75% 50%}
+.about-photo::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px var(--line);pointer-events:none}
+.about p.lead{margin-bottom:34px}
+.benefit{display:flex;gap:18px;padding:22px 0;border-top:1px solid var(--line)}
+.benefit:last-child{border-bottom:1px solid var(--line)}
+.benefit i{flex:none;font-style:normal;font-weight:800;color:var(--blue2);font-size:.85rem;letter-spacing:.1em;padding-top:4px}
+.benefit h3{font-size:1.2rem;margin-bottom:4px;letter-spacing:-.01em}
+.benefit p{color:var(--muted);font-size:.96rem}
+
+/* =====================================================
+   5. SERVICES
+   ===================================================== */
+.head{margin-bottom:clamp(36px,5vw,60px)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{display:flex;flex-direction:column;background:linear-gradient(180deg,#0E2238,#0A1829);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .5s var(--ease),border-color .4s,box-shadow .5s}
+.card:hover{transform:translateY(-8px);border-color:rgba(85,160,255,.5);box-shadow:0 24px 60px rgba(40,123,255,.18)}
+.card .photo{aspect-ratio:4/3.2}
+.card-body{padding:26px 24px 28px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:1.25rem;margin-bottom:10px;letter-spacing:-.01em}
+.card p{color:var(--muted);font-size:.95rem;flex:1;margin-bottom:20px}
+.more{display:inline-flex;align-items:center;gap:8px;color:var(--blue2);font-weight:700;font-size:.92rem;min-height:44px;align-self:flex-start}
+.more span{transition:transform .3s var(--ease)}
+.more:hover span{transform:translateX(6px)}
+/* Photo focus point for each card (x% y%) */
+.p-install img{object-position:42% 40%}
+.p-repair img{object-position:38% 30%}
+.p-heat img{object-position:55% 50%}
+.p-maint img{object-position:62% 45%}
+
+/* =====================================================
+   6. WHY CHOOSE US
+   ===================================================== */
+.why{background:var(--bg2)}
+.why::before{content:"";position:absolute;right:-10%;top:10%;width:520px;height:520px;background:radial-gradient(circle,rgba(40,123,255,.18),transparent 70%);pointer-events:none}
+.why-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(36px,7vw,100px);position:relative}
+.why-list li{display:grid;grid-template-columns:70px 1fr;gap:10px 14px;padding:28px 0;border-top:1px solid var(--line);transition:padding-left .4s var(--ease)}
+.why-list li:last-child{border-bottom:1px solid var(--line)}
+.why-list li:hover{padding-left:12px}
+.why-list .n{font-size:2rem;font-weight:800;color:transparent;-webkit-text-stroke:1px var(--blue2);line-height:1}
+.why-list h3{font-size:1.3rem;margin-bottom:6px;letter-spacing:-.01em}
+.why-list p{color:var(--muted);font-size:.97rem}
+
+/* =====================================================
+   7. CONTACT
+   ===================================================== */
+.contact{background:radial-gradient(80% 90% at 85% 0%,rgba(40,123,255,.28),transparent 60%),var(--bg);overflow:hidden}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,6vw,90px);align-items:center}
+.contact h2{font-size:clamp(2.1rem,5.4vw,3.8rem)}
+.contact .lead{margin-bottom:36px}
+.contact-btns{display:flex;flex-wrap:wrap;gap:14px}
+.info{border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.04);backdrop-filter:blur(8px);padding:12px 30px}
+.info div{padding:22px 0;border-bottom:1px solid var(--line);min-width:0}
+.info div:last-child{border:0}
+.info small{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue2);font-weight:700;margin-bottom:4px}
+.info a,.info span{font-size:clamp(1rem,2.4vw,1.25rem);font-weight:600;overflow-wrap:anywhere;transition:color .3s}
+.info a:hover{color:var(--blue2)}
+
+/* =====================================================
+   8. FOOTER
+   ===================================================== */
+footer{background:#050D18;border-top:1px solid var(--line);padding:46px 0 calc(30px + env(safe-area-inset-bottom,0px))}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px 40px;align-items:flex-start}
+.foot-info{color:var(--muted);font-size:.93rem;margin-top:8px}
+.foot-info a:hover{color:#fff}
+.foot nav{display:flex;flex-wrap:wrap;gap:6px 26px}
+.foot nav a{color:var(--muted);font-size:.93rem;min-height:36px;display:inline-flex;align-items:center;transition:color .3s}
+.foot nav a:hover{color:#fff}
+.copy{margin-top:30px;padding-top:22px;border-top:1px solid var(--line);color:#6f8097;font-size:.85rem}
+
+/* =====================================================
+   9. RESPONSIVE
+   ===================================================== */
+@media (max-width:1050px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .nav-links{gap:26px}
+}
+@media (max-width:900px){
+  /* Hero: photo on top, text below, so text never covers the technician */
+  .hero{display:block;min-height:0}
+  .hero-photo{position:relative;inset:auto;aspect-ratio:5/5.4;max-height:640px;width:100%}
+  .hero-photo img{object-position:88% 40%}
+  .hero-photo::before{background:linear-gradient(180deg,rgba(7,17,31,.6) 0%,transparent 25%,transparent 55%,var(--bg) 100%)}
+  .hero-photo::after{background:radial-gradient(70% 50% at 0% 100%,rgba(40,123,255,.25),transparent 70%)}
+  .hero-content{padding:0 0 64px;margin-top:-70px}
+  .about-grid,.why-grid,.contact-grid{grid-template-columns:1fr}
+  .about-photo{aspect-ratio:4/4.4}
+  .burger{display:block}
+  .nav-call{display:none}
+  .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:rgba(7,17,31,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;visibility:hidden;transition:max-height .45s var(--ease),visibility .45s}
+  .nav-links.open{max-height:380px;visibility:visible}
+  .nav-links a{display:block;padding:18px 20px;font-size:1.05rem;border-top:1px solid var(--line)}
+  .nav-links a::after{display:none}
+}
+@media (max-width:560px){
+  .wrap{width:min(1200px,100% - 32px)}
+  .cards{grid-template-columns:1fr}
+  .card .photo{aspect-ratio:4/3}
+  .btn{width:100%}
+  .info{padding:6px 22px}
+  .why-list li{grid-template-columns:54px 1fr}
+  .why-list .n{font-size:1.6rem}
+}
+@media (max-width:360px){
+  .logo{font-size:1.05rem;letter-spacing:.05em}
+  .hero h1{font-size:2.2rem}
+}
+@media (min-width:1600px){
+  .wrap{width:min(1360px,100% - 80px)}
+  .hero{min-height:min(100svh,1000px)}
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  .js .reveal{opacity:1;transform:none}
+  .js .img-reveal img{clip-path:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="top">
+  <div class="wrap nav">
+    <a href="#home" class="logo" aria-label="NORTHSTAR HVAC home">NORTHSTAR <b>HVAC</b></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <!-- PHONE NUMBER: change the number after tel: -->
+    <a href="tel:+15551234567" class="btn btn-primary nav-call">CALL NOW</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero-photo">
+    <!-- HERO IMAGE: images/hero-indoor-ac.jpg -->
+    <img src="images/hero-indoor-ac.jpg" width="2000" height="1117" fetchpriority="high" alt="HVAC technician on a ladder servicing a wall-mounted air conditioning unit inside a modern home">
+  </div>
+  <div class="wrap">
+    <div class="hero-content">
+      <span class="eyebrow">PREMIUM HEATING &amp; COOLING SERVICES</span>
+      <h1>
+        <span class="line"><span>Comfort</span></span>
+        <span class="line"><span>Engineered for</span></span>
+        <span class="line"><span><em>Every Season.</em></span></span>
+      </h1>
+      <p>Air conditioning, heating and maintenance services delivered with precision, clear communication and care for your home.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-primary">GET A FREE ESTIMATE</a>
+        <a href="tel:+15551234567" class="btn btn-ghost">CALL NOW</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="photo about-photo img-reveal">
+      <!-- ABOUT IMAGE: images/about-team.jpg -->
+      <img src="images/about-team.jpg" width="1200" height="893" loading="lazy" alt="Two HVAC technicians working together on an outdoor air conditioning condenser">
+    </div>
+    <div>
+      <span class="eyebrow reveal">About Us</span>
+      <h2 class="reveal" style="--d:.08s">The HVAC Experts You Can Count On</h2>
+      <p class="lead reveal" style="--d:.16s">NORTHSTAR HVAC delivers heating and cooling services for homeowners who value honest advice and careful work. We explain your options clearly, so you can choose what is right for your home.</p>
+      <div class="benefit reveal" style="--d:.2s"><i>01</i><div><h3>Professional Service</h3><p>Careful, tidy work from the first visit to the last.</p></div></div>
+      <div class="benefit reveal" style="--d:.28s"><i>02</i><div><h3>Honest Recommendations</h3><p>We suggest only what your system truly needs.</p></div></div>
+      <div class="benefit reveal" style="--d:.36s"><i>03</i><div><h3>Comfort You Can Trust</h3><p>A home that feels right, whatever the weather.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow reveal">Our Services</span>
+      <h2 class="reveal" style="--d:.08s">Heating &amp; Cooling, Done Right</h2>
+      <p class="lead reveal" style="--d:.16s">Everything your home needs to stay comfortable all year long.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal" style="--d:0s">
+        <div class="photo p-install">
+          <!-- SERVICE IMAGE 1: images/service-installation.jpg -->
+          <img src="images/service-installation.jpg" width="1000" height="745" loading="lazy" alt="Technician installing an outdoor AC condenser beside a home">
+        </div>
+        <div class="card-body"><h3>AC Installation</h3><p>Proper sizing and clean installation of new air conditioning systems.</p><a class="more" href="#contact">Learn More <span>→</span></a></div>
+      </article>
+      <article class="card reveal" style="--d:.12s">
+        <div class="photo p-repair">
+          <!-- SERVICE IMAGE 2: images/service-repair.jpg -->
+          <img src="images/service-repair.jpg" width="1000" height="745" loading="lazy" alt="Technician diagnosing an outdoor air conditioner with a multimeter and gauges">
+        </div>
+        <div class="card-body"><h3>AC Repair</h3><p>Accurate diagnosis and repair when your air conditioner stops cooling.</p><a class="more" href="#contact">Learn More <span>→</span></a></div>
+      </article>
+      <article class="card reveal" style="--d:.24s">
+        <div class="photo p-heat">
+          <!-- SERVICE IMAGE 3: images/service-heating.jpg -->
+          <img src="images/service-heating.jpg" width="1000" height="745" loading="lazy" alt="Technician inspecting an indoor furnace in a basement">
+        </div>
+        <div class="card-body"><h3>Heating Services</h3><p>Installation, inspection and repair to keep your home warm.</p><a class="more" href="#contact">Learn More <span>→</span></a></div>
+      </article>
+      <article class="card reveal" style="--d:.36s">
+        <div class="photo p-maint">
+          <!-- SERVICE IMAGE 4: images/service-maintenance.jpg -->
+          <img src="images/service-maintenance.jpg" width="1000" height="745" loading="lazy" alt="Technician performing preventive maintenance on an HVAC unit">
+        </div>
+        <div class="card-body"><h3>HVAC Maintenance</h3><p>Regular tune-ups that help your system run smoothly and last longer.</p><a class="more" href="#contact">Learn More <span>→</span></a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+<section class="why" id="why">
+  <div class="wrap why-grid">
+    <div>
+      <span class="eyebrow reveal">Why Choose Us</span>
+      <h2 class="reveal" style="--d:.08s">A Better HVAC Experience</h2>
+      <p class="lead reveal" style="--d:.16s">Service built around your time, your home and your peace of mind.</p>
+    </div>
+    <ul class="why-list">
+      <li class="reveal"><span class="n">01</span><div><h3>Reliable Service</h3><p>We show up, do the job right and respect your time.</p></div></li>
+      <li class="reveal" style="--d:.1s"><span class="n">02</span><div><h3>Clear Communication</h3><p>Plain answers and straightforward estimates, with no surprises.</p></div></li>
+      <li class="reveal" style="--d:.2s"><span class="n">03</span><div><h3>Professional Work</h3><p>Skilled technicians who treat your home with care.</p></div></li>
+      <li class="reveal" style="--d:.3s"><span class="n">04</span><div><h3>Customer-Focused Solutions</h3><p>Recommendations built around your needs and budget.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow reveal">Contact Us</span>
+      <h2 class="reveal" style="--d:.08s">Let’s Bring Comfort Back to Your Home.</h2>
+      <p class="lead reveal" style="--d:.16s">Call or text us to request a free estimate. Tell us what is going on and we will get back to you.</p>
+      <div class="contact-btns reveal" style="--d:.24s">
+        <!-- PHONE NUMBER: change the number after tel: -->
+        <a href="tel:+15551234567" class="btn btn-primary">CALL NOW</a>
+        <!-- TEXT: change the number after sms: (message text is after body=) -->
+        <a href="sms:+15551234567?body=Hello%2C%20I%20would%20like%20to%20request%20an%20HVAC%20service%20estimate." class="btn btn-ghost">TEXT US</a>
+      </div>
+    </div>
+    <div class="info reveal" style="--d:.2s">
+      <div><small>Phone</small><a href="tel:+15551234567">(555) 123-4567</a></div>
+      <div><small>Email</small><a href="mailto:info@yourcompany.com">info@yourcompany.com</a></div>
+      <div><small>Service Area</small><span>Your City &amp; Surrounding Areas</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#home" class="logo">NORTHSTAR <b>HVAC</b></a>
+        <p class="foot-info"><a href="tel:+15551234567">(555) 123-4567</a> · <a href="mailto:info@yourcompany.com">info@yourcompany.com</a></p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <p class="copy">© <span id="year">2026</span> NORTHSTAR HVAC. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+/* ---------- Mobile menu ---------- */
+var burger = document.getElementById("burger");
+var links  = document.getElementById("navLinks");
+var header = document.getElementById("top");
+function setMenu(open){
+  links.classList.toggle("open", open);
+  burger.classList.toggle("open", open);
+  header.classList.toggle("menu-open", open);
+  burger.setAttribute("aria-expanded", open);
+  burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+}
+burger.addEventListener("click", function(){ setMenu(!links.classList.contains("open")); });
+links.addEventListener("click", function(e){ if(e.target.tagName === "A") setMenu(false); });
+document.addEventListener("keydown", function(e){ if(e.key === "Escape") setMenu(false); });
+window.addEventListener("resize", function(){ if(window.innerWidth > 900) setMenu(false); });
+
+/* ---------- Header background after scrolling ---------- */
+function onScroll(){ header.classList.toggle("scrolled", window.scrollY > 30); }
+window.addEventListener("scroll", onScroll, {passive:true});
+onScroll();
+
+/* ---------- Scroll animations (IntersectionObserver) ---------- */
+var items = document.querySelectorAll(".reveal, .img-reveal");
+if("IntersectionObserver" in window){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+    });
+  }, {threshold:0.12, rootMargin:"0px 0px -6% 0px"});
+  items.forEach(function(el){ io.observe(el); });
+} else {
+  items.forEach(function(el){ el.classList.add("in"); });
+}
+
+/* ---------- Footer year ---------- */
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
