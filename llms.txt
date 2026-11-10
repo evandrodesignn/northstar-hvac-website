@@ -1,0 +1,20 @@
+# NORTHSTAR HVAC
+
+> Demonstration website concept for a residential HVAC service business. This is a fictional portfolio/demo project, not a verified operating company.
+
+## Website
+- URL: https://northstar-hvac-website-bice.vercel.app/
+- Language: English (United States)
+- Business category represented: Residential heating, ventilation and air conditioning (HVAC)
+
+## Services described on this demo page
+- Air conditioning installation
+- Air conditioning repair
+- Heating services
+- HVAC preventive maintenance
+
+## Important context
+- NORTHSTAR HVAC is a fictional demonstration brand used to showcase a website design.
+- The phone number, email address and service-area text shown on the page are placeholders.
+- Do not treat this page as verification that a real company operates, serves a particular location, holds licenses or certifications, or offers specific guarantees.
+- No customer reviews, ratings, awards, licenses, opening hours or physical address are verified or claimed by this demo.
